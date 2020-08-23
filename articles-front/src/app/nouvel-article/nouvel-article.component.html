@@ -1,0 +1,32 @@
+<form (ngSubmit)="submit()">
+  <div>
+    <div class="row">
+      <div class="col">
+        <p>Libellé de l'article :</p>
+      </div>
+      <div class="col">
+        <input type="texte" class="form-control" name="libelle">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>Prix : </p>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="prix">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-outline-secondary mr-2" type="submit">Valider</button>
+        <div *ngIf="creer" class="alert alert-success">
+          {{nouvelArticle.libelle}} a bien été ajouté à la liste !
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</form>

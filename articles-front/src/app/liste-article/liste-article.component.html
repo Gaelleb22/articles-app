@@ -1,0 +1,4 @@
+<h2>Articles disponibles</h2>
+<ul *ngIf="listeArticles">
+  <li *ngFor="let article of listeArticles">{{article.libelle}} : {{article.prix}}€</li>
+</ul>

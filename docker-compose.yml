@@ -11,15 +11,26 @@ services:
             - articles-bdd-data:/var/lib/mysql
 
 
-    articles-app:
+    articles-back:
         build: ./articles-back
-        image: articles-app
-        container_name: articles-app
+        image: articles-back
+        container_name: articles-back
         ports:
             - "8081:8080"
         depends_on:
             - article-bdd
         networks:
+            - articles-network
+
+    articles-front:
+        build: ./articles-front
+        image: articles-front
+        container_name: articles-front
+        ports:
+            - "9000:80"
+        depends_on:
+            - articles-back
+        networks: 
             - articles-network
         
 networks:
